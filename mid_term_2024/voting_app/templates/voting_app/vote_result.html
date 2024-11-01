@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- voting_app/templates/voting_app/vote_result.html -->
+
+<h1>Results for: {{ poll.question }}</h1>
+<ul>
+    {% for choice in poll.choices.all %}
+        <li>{{ choice.text }} - {{ choice.votes }} votes</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'poll_list' %}">Back to Polls</a>
+
+</body>
+</html>
